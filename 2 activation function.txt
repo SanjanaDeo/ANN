@@ -1,0 +1,35 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def sigmoid(x):
+ return 1/(1+np.exp(-x))
+def relu(x):
+ return np.maximum(0,x)
+def tanh(x):
+ return np.tanh(x)
+
+x = np.linspace(-5,5,100)
+
+y_sigmoid = sigmoid(x)
+y_relu = relu(x)
+y_tanh = tanh(x)
+
+plt.figure(figsize=(12,6))
+
+plt.subplot(2,2,1)
+plt.plot(x,y_sigmoid,label ='sigmoid',color = 'red')
+plt.title('sigmoid')
+plt.legend()
+
+plt.subplot(2,2,2)
+plt.plot(x,y_relu,label ='relu',color = 'yellow')
+plt.title('relu')
+plt.legend()
+
+plt.subplot(2,2,2)
+plt.plot(x,y_tanh,label ='tanh',color = 'orange')
+plt.title('tanh')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
